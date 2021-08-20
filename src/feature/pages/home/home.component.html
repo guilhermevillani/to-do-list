@@ -1,0 +1,43 @@
+<div class="home-container">
+  <app-group-task-selector
+    [taskGroups]="taskGroups"
+    (onSelected)="onSelectedGroupChange($event)"
+  ></app-group-task-selector>
+
+  <div class="options-container">
+    <button mat-button (click)="openCreateTask()">+ Criar nova tarefa</button>
+    <button mat-icon-button>
+      <mat-icon (click)="toggleTaskOptionsView()">more_vert</mat-icon>
+    </button>
+    <div *ngIf="taskOptions" class="tasks-views-options">
+      <ul>
+        <li
+          *ngFor="let viewOption of viewOptions"
+          (click)="selectTaskOption(viewOption.optionType)"
+        >
+          {{ viewOption.name }}
+          <span><mat-icon *ngIf="viewOption.selected">check</mat-icon></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="taskCreator" class="create-task-container">
+    <input
+      id="new-task-input"
+      class="new-task-input"
+      type="text"
+      placeholder="Nova tarefa"
+      [formControl]="taskName"
+    />
+    <button mat-raised-button (click)="createTask()">Criar</button>
+    <button mat-raised-button (click)="closeTaskCreator()">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+
+  <app-task-list
+    [tasks]="tasksView"
+    [viewAllTasks]="viewAllTasks"
+  ></app-task-list>
+</div>

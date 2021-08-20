@@ -1,0 +1,31 @@
+<div class="group-task-selector-container">
+  <div
+    class="task-selector"
+    (click)="toggleTaskSelectorVisibility()"
+    [ngClass]="{ 'task-selector-expanded': taskSelectorVisibility }"
+  >
+    <h1>{{ selectedTaskGroup?.name ?? "Todas as tarefas" }}</h1>
+    <mat-icon>expand_more</mat-icon>
+  </div>
+  <div *ngIf="taskSelectorVisibility" class="selector-container">
+    <ul>
+      <li
+        (click)="selectViewAllTasks()"
+        [ngClass]="{ 'selected-task-group': !selectedTaskGroup }"
+      >
+        Todas as tarefas
+      </li>
+      <li
+        *ngFor="let taskGroup of taskGroups"
+        [ngClass]="{ 'selected-task-group': taskGroup.selected }"
+        (click)="selectTaskGroup(taskGroup)"
+      >
+        {{ taskGroup.name }}
+        <mat-icon>edit</mat-icon>
+      </li>
+    </ul>
+    <button mat-button (click)="openNewGroupTaskPopUp()">
+      + Novo grupo de tarefas
+    </button>
+  </div>
+</div>

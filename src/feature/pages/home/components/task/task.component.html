@@ -1,0 +1,19 @@
+<div class="task-container">
+  <mat-icon
+    *ngIf="task.completed"
+    (click)="unCheckTask()"
+    class="task-completed-icon"
+    >check_circle</mat-icon
+  >
+  <mat-icon *ngIf="!task.completed" (click)="completeTask()"
+    >check_circle_outline</mat-icon
+  >
+
+  <div>
+    <p [ngClass]="{ 'task-completed-title': task.completed }">
+      {{ task.title }}
+    </p>
+
+    <p *ngIf="showGroupName" class="task-group-name">{{ task.group }}</p>
+  </div>
+</div>

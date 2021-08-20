@@ -1,0 +1,64 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+}
+
+.create-task-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.new-task-input {
+  border: none;
+  border-bottom: 1px solid #031d15;
+  background: none;
+  transition: all 100ms ease-in;
+  &:focus-visible {
+    outline: none;
+    border-bottom: 2px solid #02c289;
+    transition: all 150ms ease-out;
+  }
+}
+.tasks-views-options {
+  position: absolute;
+  background-color: red;
+  top: 50px;
+  right: 0;
+  background: #ffffff;
+  box-shadow: 2px 5px 25px 2px rgba(0, 67, 47, 0.15);
+  border-radius: 2px;
+  padding: 30px;
+  z-index: 1000;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 20px;
+
+      mat-icon,
+      span {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    li:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+}

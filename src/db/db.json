@@ -1,0 +1,36 @@
+{
+  "taskGroups": [
+    {
+      "id": 1,
+      "name": "Faculdade",
+      "tasks": [
+        {
+          "title": "sup",
+          "completed": false,
+          "group": "Faculdade"
+        },
+        {
+          "title": "faltar aula",
+          "completed": false,
+          "group": "Faculdade"
+        },
+        {
+          "title": "xingar",
+          "completed": false,
+          "group": "Faculdade"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Tarefas de casa",
+      "tasks": [
+        {
+          "title": "Lavar vasilha",
+          "completed": false,
+          "group": "Tarefas de casa"
+        }
+      ]
+    }
+  ]
+}

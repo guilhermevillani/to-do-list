@@ -1,0 +1,5 @@
+<ul class="ul-task-component">
+  <li *ngFor="let task of tasks">
+    <app-task [task]="task" [showGroupName]="viewAllTasks"></app-task>
+  </li>
+</ul>
